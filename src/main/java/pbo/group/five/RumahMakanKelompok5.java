@@ -1,32 +1,35 @@
 package pbo.group.five;
 
+import pbo.group.five.base.RumahMakan;
+
 public class RumahMakanKelompok5 extends RumahMakan {
+
     // Atribut untuk daftar menu makanan
-    private Makanan[] DaftarMakanan;
+    private final Makanan[] daftarMakanan;
 
     // Atribut untuk daftar menu minuman
-    private Minuman[] DaftarMinuman;
+    private final Minuman[] daftarMinuman;
 
     // Konstruktor untuk inisialisasi atribut
-    public RumahMakanKelompok5(String NamaRumahMakan, Makanan[] DaftarMakanan, Minuman[] DaftarMinuman) {
-        super(NamaRumahMakan); // Panggil konstruktor superclass (RumahMakan)
-        this.DaftarMakanan = DaftarMakanan;
-        this.DaftarMinuman = DaftarMinuman;
+    public RumahMakanKelompok5(String namaRumahMakan, Makanan[] daftarMakanan, Minuman[] daftarMinuman) {
+        super(namaRumahMakan); // Panggil konstruktor superclass (RumahMakan)
+        this.daftarMakanan = daftarMakanan;
+        this.daftarMinuman = daftarMinuman;
     }
 
     // Metode untuk menampilkan informasi rumah makan dan menu
-    public void TampilkanInfo() {
-        super.TampilkanInfoRumahMakan(); // Panggil metode tampilkanInfoRumahMakan dari superclass (RumahMakan)
-        System.out.println("Jumlah Menu Makanan: " + this.DaftarMakanan.length);
-        System.out.println("Jumlah Menu Minuman: " + this.DaftarMinuman.length);
+    public void tampilkanInfo() {
+        super.tampilkanInfoRumahMakan(); // Panggil metode tampilkanInfoRumahMakan dari superclass (RumahMakan)
+        System.out.println("Jumlah Menu Makanan: " + this.daftarMakanan.length);
+        System.out.println("Jumlah Menu Minuman: " + this.daftarMinuman.length);
         System.out.println("Daftar Menu Makanan:");
-        for (Makanan makanan : DaftarMakanan) {
+        for (Makanan makanan : daftarMakanan) {
             makanan.TampilkanInfoMakanan();
             System.out.println();
         }
         System.out.println("Daftar Menu Minuman:");
-        for (Minuman minuman : DaftarMinuman) {
-            minuman.TampilkanInfoMinuman();
+        for (Minuman minuman : daftarMinuman) {
+            minuman.tampilkanInfoMinuman();
             System.out.println();
         }
     }
@@ -51,6 +54,7 @@ public class RumahMakanKelompok5 extends RumahMakan {
         RumahMakanKelompok5 rumahMakan = new RumahMakanKelompok5("Rumah Makan Kelompok5", daftarMakanan, daftarMinuman);
 
         // Tampilkan informasi rumah makan dan menu
-        rumahMakan.TampilkanInfo();
+        rumahMakan.tampilkanInfo();
     }
+
 }
